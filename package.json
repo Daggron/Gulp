@@ -1,0 +1,22 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Practicing gulp",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daggron/Gulp.git"
+  },
+  "author": "Abhay Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daggron/Gulp/issues"
+  },
+  "homepage": "https://github.com/Daggron/Gulp#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
