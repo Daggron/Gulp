@@ -1,1 +1,1 @@
-console.log("Hello"),document.getElementById("hello").innerHTML="Hello World";
+console.log("Hello"),document.getElementById("hello").innerHTML="Hello World",alert("Hola Boys");

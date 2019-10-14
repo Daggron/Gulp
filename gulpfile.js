@@ -1,7 +1,8 @@
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
-const sass =require('gulp-sass')
+const sass =require('gulp-sass');
+const concat = require('gulp-concat');
 
 gulp.task('message',async ()=>{
    return console.log("Gulp is running");
@@ -32,4 +33,11 @@ gulp.task('sass',async ()=>{
     .pipe(gulp.dest('dist/css'))
 });
 
-gulp.task('default',gulp.series('copy','minify','sass','image'));
+gulp.task('combine',async()=>{
+    gulp.src('src/js/*.js')
+    .pipe(concat('main.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'));
+})
+
+gulp.task('default',gulp.series('copy','combine','sass','image'));
