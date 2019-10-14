@@ -1,14 +1,13 @@
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
+const sass =require('gulp-sass')
 
 gulp.task('message',async ()=>{
    return console.log("Gulp is running");
 });
 
-gulp.task('default',async()=>{
-    return console.log('I am Here and running');
-});
+
 
 gulp.task('copy',async ()=>{
     gulp.src('src/*.html')
@@ -26,3 +25,11 @@ gulp.task('minify',async()=>{
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
 })
+
+gulp.task('sass',async ()=>{
+    gulp.src('src/css/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('dist/css'))
+});
+
+gulp.task('default',gulp.series('copy','minify','sass','image'));
